@@ -23,7 +23,7 @@ export default function GlobalHeader() {
         {currentPath && (
           <div className="flex items-center gap-[32px] border-l-2 border-white pl-8">
             <span className="justify-start text-[40px] font-bold font-['EB_Garamond'] leading-10">
-              {currentPath}
+            {currentPath.charAt(0).toUpperCase() + currentPath.slice(1)}
             </span>
           </div>
         )}
