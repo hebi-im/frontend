@@ -326,4 +326,25 @@ const mockSongs = [
   },
 ];
 
-export { mockEvents, mockSongs };
+const mockVideos = [
+  {
+    id: 0,
+    title: "Hebi - EVER Official MV Teaser",
+    description: "2024. 05. 11",
+    video_url: "https://www.youtube.com/embed/hokrG5p7cEY?si=OPLc7wtO4m-VZmF-",
+  },
+  {
+    id: 1,
+    title: "Hello, this is Hebi.",
+    description: "2024. 05. 11",
+    video_url: "https://www.youtube.com/embed/71gpWUEfH1Y?si=52fHGS9DnejsH1Qw",
+  },
+  {
+    id: 2,
+    title: "春を告げる(Yama) / Hebi. cover",
+    description: "2024. 05. 11",
+    video_url: "https://www.youtube.com/embed/T6fFMgysK50?si=Cylzg61FWUICvDJb",
+  },
+];
+
+export { mockEvents, mockSongs, mockVideos };

@@ -8,10 +8,10 @@ import Videos from "./_sections/Videos";
 export default function Home() {
   return (
     <div className="h-screen overflow-y-scroll snap-y snap-mandatory">
+      <Videos />
       <Discography />
       <MainVideo />
       <LatestNews />
-      <Videos />
     </div>
   );
 }
