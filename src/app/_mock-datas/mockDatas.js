@@ -1,292 +1,11 @@
 const mockSongs = [
   {
-    title: "이세계아이돌 - 리와인드 (RE:WIND)",
-    videos: {
-      timeData: {
-        start: 0,
-        end: 270,
-      },
-      video: "https://youtu.be/fgSXAKsq-Vo",
-      musicVideo: "https://youtu.be/fgSXAKsq-Vo",
-      artTrack: "https://youtu.be/ZuttYdmPfzU",
-      original: "",
-    },
-    id: "fgSXAKsq-Vo",
-    type: 0,
-    genres: ["DANCE"],
-    keywords: [],
-    uploadDate: "2021-12-21T15:00:11.000Z",
-    hearts: 1,
-    isHearted: null,
-    rank: {
-      views: 22592288,
-      rank: 0,
-    },
-  },
-  {
-    title: "고세구 - 신세계",
-    videos: {
-      timeData: {
-        start: 0,
-        end: 240,
-      },
-      video: "https://youtu.be/exampleSong1",
-      musicVideo: "https://youtu.be/exampleSong1",
-      artTrack: "https://youtu.be/exampleArtTrack1",
-      original: "https://youtu.be/exampleOriginal1",
-    },
-    id: "rDFUl2mHIW4",
-    type: 1,
-    genres: ["POP"],
-    keywords: ["여름", "노래"],
-    uploadDate: "2022-07-10T10:30:00.000Z",
-    hearts: 150,
-    isHearted: true,
-    rank: {
-      views: 1234567,
-      rank: 1,
-    },
-  },
-  {
-    title: "주르르 - 고민중독",
-    videos: {
-      timeData: {
-        start: 0,
-        end: 180,
-      },
-      video: "https://youtu.be/exampleSong2",
-      musicVideo: "https://youtu.be/exampleSong2",
-      artTrack: "https://youtu.be/exampleArtTrack2",
-      original: "https://youtu.be/exampleOriginal2",
-    },
-    id: "crvPldgKJIo",
-    type: 2,
-    genres: ["R&B"],
-    keywords: ["하늘", "꿈"],
-    uploadDate: "2023-05-05T14:00:00.000Z",
-    hearts: 200,
-    isHearted: false,
-    rank: {
-      views: 7890123,
-      rank: 2,
-    },
-  },
-  {
-    title: "릴파 - LADY",
-    videos: {
-      timeData: {
-        start: 0,
-        end: 210,
-      },
-      video: "https://youtu.be/exampleSong3",
-      musicVideo: "https://youtu.be/exampleSong3",
-      artTrack: "https://youtu.be/exampleArtTrack3",
-      original: "https://youtu.be/exampleOriginal3",
-    },
-    id: "DPEtmqvaKqY",
-    type: 1,
-    genres: ["BALLAD"],
-    keywords: ["별빛", "소원"],
-    uploadDate: "2023-09-15T18:45:00.000Z",
-    hearts: 300,
-    isHearted: null,
-    rank: {
-      views: 3456789,
-      rank: 3,
-    },
-  },
-  {
-    title: "아이네 - 부엉이",
-    videos: {
-      timeData: {
-        start: 0,
-        end: 240,
-      },
-      video: "https://youtu.be/exampleSong4",
-      musicVideo: "https://youtu.be/exampleSong4",
-      artTrack: "https://youtu.be/exampleArtTrack4",
-      original: "https://youtu.be/exampleOriginal4",
-    },
-    id: "S87M2j33Zdw",
-    type: 0,
-    genres: ["ROCK"],
-    keywords: ["추억", "다시"],
-    uploadDate: "2024-01-01T09:00:00.000Z",
-    hearts: 400,
-    isHearted: true,
-    rank: {
-      views: 4567890,
-      rank: 4,
-    },
-  },
-  {
-    title: "비챤 - 로키",
-    videos: {
-      timeData: {
-        start: 0,
-        end: 300,
-      },
-      video: "https://youtu.be/exampleSong5",
-      musicVideo: "https://youtu.be/exampleSong5",
-      artTrack: "https://youtu.be/exampleArtTrack5",
-      original: "https://youtu.be/exampleOriginal5",
-    },
-    id: "l8e1Byk1Dx0",
-    type: 1,
-    genres: ["EDM"],
-    keywords: ["빛나는", "내일"],
-    uploadDate: "2023-11-10T20:00:00.000Z",
-    hearts: 500,
-    isHearted: null,
-    rank: {
-      views: 9876543,
-      rank: 5,
-    },
-  },
-  {
-    title: "우왁굳 - HUSH",
-    videos: {
-      timeData: {
-        start: 0,
-        end: 240,
-      },
-      video: "https://youtu.be/exampleSong6",
-      musicVideo: "https://youtu.be/exampleSong6",
-      artTrack: "https://youtu.be/exampleArtTrack6",
-      original: "https://youtu.be/exampleOriginal6",
-    },
-    id: "6hEvgKL0ClA",
-    type: 0,
-    genres: ["HIPHOP"],
-    keywords: ["세상", "비밀"],
-    uploadDate: "2023-02-20T11:15:00.000Z",
-    hearts: 600,
-    isHearted: true,
-    rank: {
-      views: 1234567,
-      rank: 6,
-    },
-  },
-  {
-    title: "뢴트게늄 - 어항",
-    videos: {
-      timeData: {
-        start: 0,
-        end: 270,
-      },
-      video: "https://youtu.be/exampleSong7",
-      musicVideo: "https://youtu.be/exampleSong7",
-      artTrack: "https://youtu.be/exampleArtTrack7",
-      original: "https://youtu.be/exampleOriginal7",
-    },
-    id: "QgMFpuos4Rg",
-    type: 1,
-    genres: ["FOLK"],
-    keywords: ["사랑", "기억"],
-    uploadDate: "2023-08-30T17:30:00.000Z",
-    hearts: 700,
-    isHearted: null,
-    rank: {
-      views: 2345678,
-      rank: 7,
-    },
-  },
-  {
-    title: "고세구 - 팬서비스",
-    videos: {
-      timeData: {
-        start: 0,
-        end: 300,
-      },
-      video: "https://youtu.be/exampleSong8",
-      musicVideo: "https://youtu.be/exampleSong8",
-      artTrack: "https://youtu.be/exampleArtTrack8",
-      original: "https://youtu.be/exampleOriginal8",
-    },
-    id: "YmELthNomns",
-    type: 0,
-    genres: ["JAZZ"],
-    keywords: ["여정", "희망"],
-    uploadDate: "2023-03-25T13:45:00.000Z",
-    hearts: 800,
-    isHearted: true,
-    rank: {
-      views: 3456789,
-      rank: 8,
-    },
-  },
-  {
-    title: "주르르 - 사이언티스트",
-    videos: {
-      timeData: {
-        start: 0,
-        end: 180,
-      },
-      video: "https://youtu.be/exampleSong9",
-      musicVideo: "https://youtu.be/exampleSong9",
-      artTrack: "https://youtu.be/exampleArtTrack9",
-      original: "https://youtu.be/exampleOriginal9",
-    },
-    id: "--Go33WYnqw",
-    type: 1,
-    genres: ["CLASSICAL"],
-    keywords: ["여정", "희망"],
-    uploadDate: "2023-03-25T13:45:00.000Z",
-    hearts: 800,
-    isHearted: true,
-    rank: {
-      views: 3456789,
-      rank: 9,
-    },
-  },
-  {
-    title: "릴파 - 댄스홀",
-    videos: {
-      timeData: {
-        start: 0,
-        end: 180,
-      },
-      video: "https://youtu.be/exampleSong9",
-      musicVideo: "https://youtu.be/exampleSong9",
-      artTrack: "https://youtu.be/exampleArtTrack9",
-      original: "https://youtu.be/exampleOriginal9",
-    },
-    id: "--Go33WYnqw",
-    type: 1,
-    genres: ["CLASSICAL"],
-    keywords: ["여정", "희망"],
-    uploadDate: "2023-03-25T13:45:00.000Z",
-    hearts: 800,
-    isHearted: true,
-    rank: {
-      views: 3456789,
-      rank: 10,
-    },
-  },
-  {
-    title:
-      "흠냐링흠냐링흠냐링흠냐링흠냐링흠냐링흠냐링흠냐링흠냐링 - 뭐있더라생각이안난다다다다다다다다다다다다다다뭐있더라생각이안난다다다다다다다다다다다다다다",
-    videos: {
-      timeData: {
-        start: 0,
-        end: 180,
-      },
-      video: "https://youtu.be/exampleSong9",
-      musicVideo: "https://youtu.be/exampleSong9",
-      artTrack: "https://youtu.be/exampleArtTrack9",
-      original: "https://youtu.be/exampleOriginal9",
-    },
-    id: "--Go33WYnqw",
-    type: 1,
-    genres: ["CLASSICAL"],
-    keywords: ["여정", "희망"],
-    uploadDate: "2023-03-25T13:45:00.000Z",
-    hearts: 800,
-    isHearted: true,
-    rank: {
-      views: 3456789,
-      rank: 11,
-    },
+    id: "gMjU5XJnc7E", //초계반 유튜브 영상 아이디
+    title: "Chroma",
+    type: "1st Mini Album",
+    imgLink:
+      "https://pbs.twimg.com/media/GmdqY9Aa8AAZKMX?format=jpg&name=4096x4096",
+    uploadDate: "2025. 02. 11",
   },
 ];
 
@@ -294,20 +13,65 @@ const mockVideos = [
   {
     id: 0,
     title: "Hebi - EVER Official MV Teaser",
-    description: "2024. 05. 11",
-    video_url: "https://www.youtube.com/embed/hokrG5p7cEY?si=OPLc7wtO4m-VZmF-",
+    uploadDate: "2025. 03. 24",
+    video_url: "https://www.youtube.com/embed/hokrG5p7cEY?si=xt46D5LIuvcIVhS3",
   },
   {
     id: 1,
     title: "Hello, this is Hebi.",
-    description: "2024. 05. 11",
-    video_url: "https://www.youtube.com/embed/71gpWUEfH1Y?si=52fHGS9DnejsH1Qw",
+    uploadDate: "2025. 03. 17",
+    video_url: "https://www.youtube.com/embed/T6fFMgysK50?si=PcfsfPeF7K6q3aUe",
   },
   {
     id: 2,
+    title: "Hebi 1st Album Roadmap",
+    uploadDate: "2025. 03. 10",
+    video_url: "https://www.youtube.com/embed/2zmjROFUHOU?si=0L-jN7kglIXfEcJu",
+  },
+  {
+    id: 3,
+    title: "Night Sky Patrol of Tomorrow / Hebi. cover",
+    uploadDate: "2025. 02. 11",
+    video_url: "https://www.youtube.com/embed/gMjU5XJnc7E?si=clwkewzm84p9YoFy",
+  },
+
+  {
+    id: 4,
+    title: "霽れを待つ(Orangestar) / Hebi. cover",
+    uploadDate: "2021. 03. 07",
+    video_url: "https://www.youtube.com/embed/ZPgGq1OFhPU?si=838AD3dFL1bQvXmM",
+  },
+  {
+    id: 5,
+    title: "泥中に咲く(ウォルピスカーター) / Hebi. cover",
+    uploadDate: "2020. 10. 14",
+    video_url: "https://www.youtube.com/embed/7XaLMxc62NQ?si=dZt3ubBr-KH6SfYz",
+  },
+
+  {
+    id: 6,
+    title: "第六感 THE SIXTH SENSE (Reol) / Hebi. Remix cover",
+    uploadDate: "2020. 10. 06",
+    video_url: "https://www.youtube.com/embed/lZKV0ilNXCc?si=9cCCjoOUmT-FIR49",
+  },
+  {
+    id: 7,
+    title: "daybreak frontline (Orangestar) / Hebi. cover",
+    uploadDate: "2020. 08. 22",
+    video_url: "https://www.youtube.com/embed/0w6DwANxOWE?si=uaqxS8oQfsJvfwRn",
+  },
+  {
+    id: 8,
     title: "春を告げる(Yama) / Hebi. cover",
-    description: "2024. 05. 11",
-    video_url: "https://www.youtube.com/embed/T6fFMgysK50?si=Cylzg61FWUICvDJb",
+    uploadDate: "2020. 01. 30",
+    video_url: "https://www.youtube.com/embed/71gpWUEfH1Y?si=zeSavAm8GSbMHtgf",
+  },
+
+  {
+    id: 9,
+    title: "Henceforth(Orangestar) / Hebi. cover",
+    uploadDate: "2020. 01. 10",
+    video_url: "https://www.youtube.com/embed/yXl5D2B8nKk?si=Zi2c4TMo74sZZSwi",
   },
 ];
 
@@ -329,4 +93,4 @@ const mockNews = [
   },
 ];
 
-export { mockEvents, mockSongs, mockVideos, mockNews };
+export { mockSongs, mockVideos, mockNews };

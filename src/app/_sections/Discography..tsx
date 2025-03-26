@@ -11,7 +11,7 @@ import { mockSongs } from "@/app/_mock-datas/mockDatas";
 export default function Discography() {
   return (
     <section className=" h-screen flex items-center justify-center snap-start">
-      <div className="flex flex-col items-end gap-8">
+      <div className="flex flex-col gap-8">
         <div className="w-[1440px] flex justify-between items-center ">
           <Image
             src={"/assets/icons/prev_arrow_circle.svg"}
@@ -19,6 +19,7 @@ export default function Discography() {
             className="prev-arrow"
             width={48}
             height={48}
+            style={{ cursor: "pointer" }}
           ></Image>
           <Swiper
             className=" w-[1200px] "
@@ -58,14 +59,14 @@ export default function Discography() {
                       {isActive && (
                         <div className="absolute bottom-8 left-8 inline-flex flex-col justify-start items-start gap-3">
                           <div className="justify-start text-white text-base font-bold font-['EB_Garamond']">
-                            2025. 04. 22.
+                            {song.uploadDate}
                           </div>
                           <div className="flex flex-col justify-start items-start gap-1">
                             <div className="justify-start text-white text-xs font-normal font-['EB_Garamond']">
-                              1st Mini Album
+                              {song.type}
                             </div>
                             <div className="justify-start text-white text-2xl font-extrabold font-['EB_Garamond']">
-                              Chroma
+                              {song.title}
                             </div>
                           </div>
                         </div>
@@ -82,20 +83,23 @@ export default function Discography() {
             alt="nextArrowCircle"
             width={48}
             height={48}
+            style={{ cursor: "pointer" }}
           ></Image>
         </div>
-        <button className="inline-flex justify-start items-center gap-4 cursor-pointer">
-          <span className="justify-start text-white text-2xl font-normal font-['EB_Garamond']">
-            See All Discography
-          </span>
-          <Image
-            src={"/assets/icons/right_arrow.svg"}
-            className="right-arrow"
-            alt="rightArrow"
-            width={24}
-            height={24}
-          ></Image>
-        </button>
+        <div className="w-full pr-[110px] flex justify-end">
+          <button className="inline-flex justify-start items-center gap-4 cursor-pointer ">
+            <span className="justify-start text-white text-2xl font-normal font-['EB_Garamond']">
+              See All Discography
+            </span>
+            <Image
+              src={"/assets/icons/right_arrow.svg"}
+              className="right-arrow"
+              alt="rightArrow"
+              width={24}
+              height={24}
+            ></Image>
+          </button>
+        </div>
       </div>
     </section>
   );
