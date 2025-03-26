@@ -1,39 +1,3 @@
-const mockEvents = [
-  {
-    id: 0,
-    title: "LILPACON : GOING OUT",
-    description: "2024. 07. 12 ~ 2024. 07. 13 | KYUNGHEE UNIVERSITY",
-    image_url:
-      "https://nimage.g-enews.com/phpwas/restmb_allidxmake.php?idx=5&simg=2024061708570504999c5fa75ef8612254575.jpg",
-  },
-  {
-    id: 1,
-    title: "EVER PURPLE",
-    description: "2024. 05. 11",
-    image_url: "https://cdn.mhnse.com/news/photo/202405/273495_299518_1220.png",
-  },
-  {
-    id: 2,
-    title: "역광",
-    description: "2024. 08. 03",
-    image_url:
-      "https://pbs.twimg.com/media/GUDHFAFbsAAEawV?format=jpg&name=large",
-  },
-  {
-    id: 3,
-    title: "LILPACON : GOING OUT",
-    description: "2024. 07. 12 ~ 2024. 07. 13 | KYUNGHEE UNIVERSITY",
-    image_url:
-      "https://nimage.g-enews.com/phpwas/restmb_allidxmake.php?idx=5&simg=2024061708570504999c5fa75ef8612254575.jpg",
-  },
-  {
-    id: 4,
-    title: "EVER PURPLE",
-    description: "2024. 05. 11",
-    image_url: "https://cdn.mhnse.com/news/photo/202405/273495_299518_1220.png",
-  },
-];
-
 const mockSongs = [
   {
     title: "이세계아이돌 - 리와인드 (RE:WIND)",
@@ -347,4 +311,22 @@ const mockVideos = [
   },
 ];
 
-export { mockEvents, mockSongs, mockVideos };
+const mockNews = [
+  {
+    date: "2025.03.14",
+    title: "[이벤트] Hebi 위버스 커뮤니티 오픈 기념 이벤트",
+    link: "https://weverse.io/hebi/notice/25653",
+  },
+  {
+    date: "2025.03.14",
+    title: "[안내] Hebi. Digital Membership 오픈 안내",
+    link: "https://weverse.io/hebi/notice/25684",
+  },
+  {
+    date: "2025.03.15",
+    title: "[안내] Hebi. 커뮤니티 오픈 및 이용 안내",
+    link: "https://weverse.io/hebi/notice/25642",
+  },
+];
+
+export { mockEvents, mockSongs, mockVideos, mockNews };
