@@ -7,8 +7,21 @@ export default function GlobalHeader() {
   const [currentPath, setCurrentPath] = useState("");
   const pathname = usePathname();
 
+  // useEffect(() => {
+  //   setCurrentPath(pathname.substring(1));
+  // }, [pathname]);
+
   useEffect(() => {
-    setCurrentPath(pathname.substring(1));
+    if (!pathname) return;
+
+    const pathSegments = pathname.split("/").filter(Boolean);
+    const filteredSegments = pathSegments.filter(segment => isNaN(Number(segment))); 
+
+    const formattedPath = filteredSegments
+      .map(segment => segment.charAt(0).toUpperCase() + segment.slice(1))
+      .join(" / ");
+
+    setCurrentPath(formattedPath);
   }, [pathname]);
 
   return (
@@ -23,7 +36,7 @@ export default function GlobalHeader() {
         {currentPath && (
           <div className="flex items-center gap-[32px] border-l-2 border-white pl-8">
             <span className="justify-start text-[40px] font-bold font-['EB_Garamond'] leading-10">
-            {currentPath.charAt(0).toUpperCase() + currentPath.slice(1)}
+            {currentPath}
             </span>
           </div>
         )}
