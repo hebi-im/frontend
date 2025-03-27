@@ -1,3 +1,40 @@
+const mockHeroImages = [
+  {
+    id: 0,
+    src: "https://static.hebi.im/assets/images/2025/03/banner/20250314_weverse-open.webp",
+  },
+  {
+    id: 1,
+    src: "https://static.hebi.im/assets/images/2025/03/banner/20250309_roadmap.webp",
+  },
+  {
+    id: 2,
+    src: "https://static.hebi.im/assets/images/2025/02/banner/20250211_night-sky-patrol-of-tomorrow_001.webp",
+  },
+  {
+    id: 3,
+    src: "https://static.hebi.im/assets/images/2025/02/banner/20250211_night-sky-patrol-of-tomorrow_002.webp",
+  },
+];
+
+const mockMessages = [
+  {
+    id: 0,
+    title: "Hebi 1st Album - 'Chroma'",
+    description: "2025.04.22 - 1집 앨범 'Chroma' 발매!",
+  },
+  {
+    id: 1,
+    title: "Hebi Weverse Open!",
+    description: "이제 Hebi의 다양한 소식을 위버스 에서 만나보세요 💖",
+  },
+  {
+    id: 2,
+    title: "내일의 밤하늘 초계반",
+    description: "떨어져 있던 3년간의 마음을 담아 준비했어요",
+  },
+];
+
 const mockSongs = [
   {
     id: "gMjU5XJnc7E", //초계반 유튜브 영상 아이디
@@ -93,4 +130,4 @@ const mockNews = [
   },
 ];
 
-export { mockSongs, mockVideos, mockNews };
+export { mockHeroImages, mockMessages, mockSongs, mockVideos, mockNews };
