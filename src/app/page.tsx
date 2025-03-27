@@ -1,6 +1,6 @@
 // import Image from "next/image";
 
-import Discography from "./_sections/Discography.";
+import Discography from "./_sections/Discography";
 import LatestNews from "./_sections/LatestNews";
 import Hero from "./_sections/Hero";
 import Videos from "./_sections/Videos";
