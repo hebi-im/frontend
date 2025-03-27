@@ -1,92 +1,109 @@
 "use client";
 
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import Image from "next/image";
+import { useState } from "react";
+import dynamic from "next/dynamic";
 
-// import required modules
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+
+// import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
 import { mockVideos } from "@/app/_mock-datas/mockDatas";
 
+import PrevArrowCircleIcon from "@/assets/icons/prev_arrow_circle.svg";
+import NextArrowCircleIcon from "@/assets/icons/next_arrow_circle.svg";
+
+// import { ebGaramond } from "@/styles/fonts";
+// import { cn } from "@/utils/tailwind-merge";
+
+const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
+
 export default function Videos() {
+  const [isPlaying, setIsPlaying] = useState<boolean>(false);
+
   return (
-    <section className=" h-screen flex items-center justify-center snap-start">
-      <div className="flex flex-col items-end gap-8">
-        <div className=" w-[1440px] flex justify-between items-center ">
-          <Image
-            src={"/assets/icons/prev_arrow_circle.svg"}
-            alt="prevArrowCircle"
-            className="prev-arrow"
-            width={48}
-            height={48}
-            style={{ cursor: "pointer" }}
-          ></Image>
+    <section
+      className="h-screen flex items-center justify-center snap-start"
+      data-section="videos"
+      data-section-name="Videos"
+    >
+      <div className="flex w-full max-w-[1200px] flex-col items-end gap-8">
+        <div className="flex w-full max-w-[1200px] gap-10 justify-between items-center ">
+          <PrevArrowCircleIcon
+            className="cursor-pointer size-12 prev-arrow"
+            onClick={() => setIsPlaying(false)}
+          />
+
           <Swiper
-            slidesPerView={1}
+            className="w-full max-w-[1200px]"
             centeredSlides={true}
-            modules={[Navigation]}
+            slidesPerView={1}
             navigation={{
               nextEl: ".next-arrow",
               prevEl: ".prev-arrow",
             }}
-            className="w-[1200px]"
+            modules={[Navigation]}
           >
-            {mockVideos.map((video: any, index: number) => {
+            {mockVideos.map((video, index) => {
               return (
                 <SwiperSlide
-                  key={index}
-                  className="relative flex items-center justify-center"
+                  key={`video-${index.toString()}`}
+                  className="relative flex items-center justify-center aspect-video"
                 >
-                  <iframe
-                    width="1200"
-                    height="675"
-                    src={`${video.video_url}?controls=0&modestbranding=1&rel=0`}
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    style={{ borderRadius: "20px" }}
-                  ></iframe>
+                  <ReactPlayer
+                    url={video.video_url}
+                    className="rounded-md"
+                    width="100%"
+                    height="100%"
+                    pip
+                    controls
+                    playing={isPlaying}
+                    playsinline
+                    light
+                    config={{
+                      youtube: {
+                        playerVars: {
+                          fs: 0,
+                          rel: 0,
+                          modestbranding: 0,
+                        },
+                      },
+                    }}
+                    onClickPreview={() => setIsPlaying(true)}
+                    onPlay={() => setIsPlaying(true)}
+                    onEnded={() => setIsPlaying(false)}
+                  />
 
-                  <div className="absolute bottom-8 left-8 z-10 flex flex-col gap-2">
-                    <span className="text-white text-base font-['EB_Garamond']">
-                      {video.uploadDate}
-                    </span>
-                    <h2 className="text-white text-2xl font-bold font-['EB_Garamond']">
-                      {video.title}
-                    </h2>
-                  </div>
+                  {!isPlaying && (
+                    <div className="absolute bottom-8 left-8 z-10 flex flex-col gap-2">
+                      <span className="text-white text-base font-['EB_Garamond']">
+                        {video.uploadDate}
+                      </span>
+                      <h2 className="text-white text-2xl font-bold font-['EB_Garamond']">
+                        {video.title}
+                      </h2>
+                    </div>
+                  )}
                 </SwiperSlide>
               );
             })}
           </Swiper>
-          <Image
-            src={"/assets/icons/next_arrow_circle.svg"}
-            className="next-arrow"
-            alt="nextArrowCircle"
-            width={48}
-            height={48}
-            style={{ cursor: "pointer" }}
-          ></Image>
+
+          <NextArrowCircleIcon
+            className="cursor-pointer size-12 next-arrow"
+            onClick={() => setIsPlaying(false)}
+          />
         </div>
-        <div className="w-full pr-[110px] flex justify-end">
-          <button className="inline-flex justify-start items-center gap-4 cursor-pointer">
-            <span className="justify-start text-white text-2xl font-normal font-['EB_Garamond']">
+
+        {/* <div className="w-full flex justify-end">
+          <button className="inline-flex items-center gap-4 cursor-pointer">
+            <span className={cn("text-white text-2xl", ebGaramond.className)}>
               See All Videos
             </span>
-            <Image
-              src={"/assets/icons/right_arrow.svg"}
-              className="right-arrow"
-              alt="rightArrow"
-              width={24}
-              height={24}
-            ></Image>
+
+            <ArrowRightIcon className="size-6" />
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

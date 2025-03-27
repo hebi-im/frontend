@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --color-minsk-50: #eff2fe;
+  --color-minsk-100: #e2e8fd;
+  --color-minsk-200: #cad5fb;
+  --color-minsk-300: #a9b8f8;
+  --color-minsk-400: #8792f2;
+  --color-minsk-500: #6a6eea;
+  --color-minsk-600: #544edd;
+  --color-minsk-700: #483fc3;
+  --color-minsk-800: #3b369d;
+  --color-minsk-900: #373584;
+  --color-minsk-950: #201d49;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-minsk-900 text-gray-100;
+}

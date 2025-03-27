@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import GlobalHeader from "@/components/GlobalHeader";
-import GlobalFooter from "@/components/GlobalFooter";
 
-const inter = Inter({ subsets: ["latin"] });
+import "@/styles/globals.css";
+
+import GlobalHeader from "@/components/GlobalHeader";
+
+import { cn } from "@/utils/tailwind-merge";
+import { plusJakartaSans } from "@/styles/fonts";
+
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/navigation";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,10 +23,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>
+      <head>
+        {/* Fonts */}
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-jp-dynamic-subset.min.css"
+        />
+      </head>
+
+      <body className={cn(plusJakartaSans.className, "antialiased")}>
         <GlobalHeader />
         {children}
-        {/* <GlobalFooter /> */}
       </body>
     </html>
   );
