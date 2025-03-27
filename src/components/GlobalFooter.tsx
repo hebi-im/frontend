@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function GlobalFooter() {
   return (
-    <footer className="bg-[#0F111F] text-white">
+    <footer className="bg-[#0F111F] text-white snap-end">
       <div className="container mx-auto flex flex-col justify-start items-start gap-[42px] py-[64px]">
         <Image
           src={"/assets/logo.svg"}

@@ -4,6 +4,7 @@ import Discography from "./_sections/Discography.";
 import LatestNews from "./_sections/LatestNews";
 import Hero from "./_sections/Hero";
 import Videos from "./_sections/Videos";
+import GlobalFooter from "@/components/GlobalFooter";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <LatestNews />
       <Discography />
       <Videos />
+      <GlobalFooter />
     </div>
   );
 }
