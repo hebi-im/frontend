@@ -1,42 +1,44 @@
-"use client";
+"use client"
 
-import { useState } from "react";
-import dynamic from "next/dynamic";
+import { useState } from "react"
+import dynamic from "next/dynamic"
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react"
+import { Navigation } from "swiper/modules"
 
 // import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
-import { mockVideos } from "@/app/_mock-datas/mockDatas";
+import { mockVideos } from "@/app/_mock-datas/mockDatas"
 
-import PrevArrowCircleIcon from "@/assets/icons/prev_arrow_circle.svg";
-import NextArrowCircleIcon from "@/assets/icons/next_arrow_circle.svg";
+import PrevArrowCircleIcon from "@/assets/icons/prev_arrow_circle.svg"
+import NextArrowCircleIcon from "@/assets/icons/next_arrow_circle.svg"
 
-import { ebGaramond } from "@/styles/fonts";
-import { cn } from "@/utils/tailwind-merge";
+import { ebGaramond } from "@/styles/fonts"
+import { cn } from "@/utils/tailwind-merge"
 
-const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
+const ReactPlayer = dynamic(() => import("react-player/lazy"), {
+  ssr: false,
+})
 
 export default function Videos() {
-  const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  const [isPlaying, setIsPlaying] = useState<boolean>(false)
 
   return (
     <section
-      className="h-screen flex items-center justify-center snap-start"
+      className="flex h-screen snap-start items-center justify-center"
       data-section="videos"
       data-section-name="Videos"
     >
       <div className="flex w-full max-w-[1200px] flex-col items-end gap-8">
-        <div className="flex w-full max-w-[1200px] gap-10 justify-between items-center ">
+        <div className="flex w-full max-w-[1200px] items-center justify-between gap-10">
           <PrevArrowCircleIcon
-            className="cursor-pointer size-12 prev-arrow"
+            className="prev-arrow size-12 cursor-pointer"
             onClick={() => setIsPlaying(false)}
           />
 
           <Swiper
             className="w-full max-w-[1200px]"
-            centeredSlides={true}
+            centeredSlides
             slidesPerView={1}
             navigation={{
               nextEl: ".next-arrow",
@@ -48,7 +50,7 @@ export default function Videos() {
               return (
                 <SwiperSlide
                   key={`video-${index.toString()}`}
-                  className="relative flex items-center justify-center aspect-video"
+                  className="relative flex aspect-video items-center justify-center"
                 >
                   <ReactPlayer
                     url={video.video_url}
@@ -76,13 +78,18 @@ export default function Videos() {
 
                   {!isPlaying && (
                     <div className="absolute bottom-8 left-8 z-10 flex flex-col gap-2">
-                      <span className={cn("text-white", ebGaramond.className)}>
+                      <span
+                        className={cn(
+                          "text-white",
+                          ebGaramond.className,
+                        )}
+                      >
                         {video.uploadDate}
                       </span>
                       <h2
                         className={cn(
-                          "text-white text-2xl font-bold",
-                          ebGaramond.className
+                          "text-2xl font-bold text-white",
+                          ebGaramond.className,
                         )}
                       >
                         {video.title}
@@ -90,12 +97,12 @@ export default function Videos() {
                     </div>
                   )}
                 </SwiperSlide>
-              );
+              )
             })}
           </Swiper>
 
           <NextArrowCircleIcon
-            className="cursor-pointer size-12 next-arrow"
+            className="next-arrow size-12 cursor-pointer"
             onClick={() => setIsPlaying(false)}
           />
         </div>
@@ -111,5 +118,5 @@ export default function Videos() {
         </div> */}
       </div>
     </section>
-  );
+  )
 }

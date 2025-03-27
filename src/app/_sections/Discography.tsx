@@ -1,36 +1,36 @@
-"use client";
+"use client"
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react"
+import { EffectCoverflow, Navigation } from "swiper/modules"
 
 // import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
-import { mockSongs } from "@/app/_mock-datas/mockDatas";
+import { mockSongs } from "@/app/_mock-datas/mockDatas"
 
-import PrevArrowCircleIcon from "@/assets/icons/prev_arrow_circle.svg";
-import NextArrowCircleIcon from "@/assets/icons/next_arrow_circle.svg";
+import PrevArrowCircleIcon from "@/assets/icons/prev_arrow_circle.svg"
+import NextArrowCircleIcon from "@/assets/icons/next_arrow_circle.svg"
 
-import { ebGaramond } from "@/styles/fonts";
-import { cn } from "@/utils/tailwind-merge";
+import { ebGaramond } from "@/styles/fonts"
+import { cn } from "@/utils/tailwind-merge"
 
 export default function Discography() {
   return (
     <section
-      className="h-screen flex items-center justify-center snap-start"
+      className="flex h-screen snap-start items-center justify-center"
       data-section="discography"
       data-section-name="Discography"
     >
       <div className="flex w-full max-w-[1200px] flex-col gap-8">
-        <div className="flex w-full max-w-[1200px] gap-10 justify-between items-center">
-          <PrevArrowCircleIcon className="cursor-pointer size-12 prev-arrow" />
+        <div className="flex w-full max-w-[1200px] items-center justify-between gap-10">
+          <PrevArrowCircleIcon className="prev-arrow size-12 cursor-pointer" />
 
           <Swiper
             className="w-full max-w-[1200px]"
             effect="coverflow"
-            grabCursor={true}
-            centeredSlides={true}
+            grabCursor
+            centeredSlides
             slidesPerView={2.35}
-            loop={true}
+            loop
             coverflowEffect={{
               rotate: 0,
               stretch: 82,
@@ -49,15 +49,15 @@ export default function Discography() {
                 {({ isActive }) => (
                   <a
                     href={`https://youtu.be/${song.id}`}
-                    className={`flex w-fit h-fit flex-col justify-center items-center gap-11 ${
+                    className={`flex h-fit w-fit flex-col items-center justify-center gap-11 ${
                       isActive ? "cursor-pointer" : "cursor-default"
                     }`}
                     target="_blank"
                     rel="noreferrer noopener"
                   >
-                    <div className="relative group w-[500px] h-[500px]">
+                    <div className="group relative h-[500px] w-[500px]">
                       <div
-                        className="absolute w-full h-full rounded bg-center bg-cover bg-no-repeat"
+                        className="absolute h-full w-full rounded bg-cover bg-center bg-no-repeat"
                         style={{
                           backgroundImage: `url(https://i.ytimg.com/vi/${song.id}/hq720.jpg)`,
                         }}
@@ -65,13 +65,13 @@ export default function Discography() {
 
                       {isActive && (
                         <>
-                          <div className="group-hover:opacity-100 opacity-0 duration-300 absolute w-full h-full rounded bg-black/40 z-40" />
+                          <div className="absolute z-40 h-full w-full rounded bg-black/40 opacity-0 duration-300 group-hover:opacity-100" />
 
-                          <div className="group-hover:opacity-100 z-50 opacity-0 duration-300 absolute bottom-8 left-8 inline-flex flex-col gap-3">
+                          <div className="absolute bottom-8 left-8 z-50 inline-flex flex-col gap-3 opacity-0 duration-300 group-hover:opacity-100">
                             <div
                               className={cn(
-                                "text-white font-semibold",
-                                ebGaramond.className
+                                "font-semibold text-white",
+                                ebGaramond.className,
                               )}
                             >
                               {song.uploadDate}
@@ -79,13 +79,13 @@ export default function Discography() {
                             <div className="flex flex-col gap-1">
                               <div
                                 className={cn(
-                                  "text-white text-sm",
-                                  ebGaramond.className
+                                  "text-sm text-white",
+                                  ebGaramond.className,
                                 )}
                               >
                                 {song.type}
                               </div>
-                              <div className="text-white text-2xl font-bold">
+                              <div className="text-2xl font-bold text-white">
                                 {song.title}
                               </div>
                             </div>
@@ -99,7 +99,7 @@ export default function Discography() {
             ))}
           </Swiper>
 
-          <NextArrowCircleIcon className="cursor-pointer size-12 next-arrow" />
+          <NextArrowCircleIcon className="next-arrow size-12 cursor-pointer" />
         </div>
 
         {/* <div className="w-full flex justify-end">
@@ -113,5 +113,5 @@ export default function Discography() {
         </div> */}
       </div>
     </section>
-  );
+  )
 }

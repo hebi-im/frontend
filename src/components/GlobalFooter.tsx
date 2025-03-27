@@ -1,13 +1,13 @@
-import HebiLogo from "@/assets/logo.svg";
+import HebiLogo from "@/assets/logo.svg"
 
 export default function GlobalFooter() {
   return (
-    <footer className="bg-[#0F111F] text-white snap-end">
-      <div className="container mx-auto flex flex-col justify-start items-start gap-[42px] py-[64px]">
+    <footer className="snap-end bg-[#0F111F] text-white">
+      <div className="container mx-auto flex flex-col items-start justify-start gap-[42px] py-[64px]">
         <HebiLogo height={44} />
 
-        <div className="w-full flex flex-col justify-start items-start gap-[18px]">
-          <div className="w-full flex flex-col justify-start items-start gap-[8px]">
+        <div className="flex w-full flex-col items-start justify-start gap-[18px]">
+          <div className="flex w-full flex-col items-start justify-start gap-[8px]">
             <p className="text-base font-bold">
               © 2025 Project Hebi.im. ALL RIGHTS RESERVED.
             </p>
@@ -18,13 +18,15 @@ export default function GlobalFooter() {
 
           <p className="text-sm">
             Build{" "}
-            {process.env.CF_PAGES_COMMIT_SHA?.substring(0, 8) ?? "develop"} |
-            Contact: <a href="mailto:team@hebi.im">team@hebi.im</a>{" "}
+            {process.env.CF_PAGES_COMMIT_SHA?.substring(0, 8) ??
+              "develop"}{" "}
+            | Contact: <a href="mailto:team@hebi.im">team@hebi.im</a>{" "}
             (Alternatively{" "}
-            <a href="mailto:hebi.im@lunaiz.com">hebi.im@lunaiz.com</a>)
+            <a href="mailto:hebi.im@lunaiz.com">hebi.im@lunaiz.com</a>
+            )
           </p>
         </div>
       </div>
     </footer>
-  );
+  )
 }

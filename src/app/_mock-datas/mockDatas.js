@@ -15,7 +15,7 @@ const mockHeroImages = [
     id: 3,
     src: "https://static.hebi.im/assets/images/2025/02/banner/20250211_night-sky-patrol-of-tomorrow_002.webp",
   },
-];
+]
 
 const mockMessages = [
   {
@@ -27,7 +27,8 @@ const mockMessages = [
   {
     id: 1,
     title: "Hebi Weverse Open!",
-    description: "이제 Hebi의 다양한 소식을 위버스 에서 만나보세요 💖",
+    description:
+      "이제 Hebi의 다양한 소식을 위버스 에서 만나보세요 💖",
     link: "https://weverse.io/hebi/media/3-194433990?hl=ko",
   },
   {
@@ -42,7 +43,7 @@ const mockMessages = [
     description: "떨어져 있던 3년간의 마음을 담아 준비했어요",
     link: "https://youtu.be/gMjU5XJnc7E",
   },
-];
+]
 
 const mockSongs = [
   {
@@ -57,7 +58,7 @@ const mockSongs = [
   //   type: "1st Mini Album",
   //   uploadDate: "2025. 04. 22",
   // },
-];
+]
 
 const mockVideos = [
   {
@@ -123,7 +124,7 @@ const mockVideos = [
     uploadDate: "2020. 01. 10",
     video_url: "https://youtu.be/yXl5D2B8nKk",
   },
-];
+]
 
 const mockNews = [
   {
@@ -141,6 +142,12 @@ const mockNews = [
     title: "[안내] Hebi. 커뮤니티 오픈 및 이용 안내",
     link: "https://weverse.io/hebi/notice/25642",
   },
-];
+]
 
-export { mockHeroImages, mockMessages, mockSongs, mockVideos, mockNews };
+export {
+  mockHeroImages,
+  mockMessages,
+  mockSongs,
+  mockVideos,
+  mockNews,
+}

@@ -1,15 +1,14 @@
-import Hero from "./_sections/Hero";
-import LatestNews from "./_sections/LatestNews";
-import Discography from "./_sections/Discography";
-import Videos from "./_sections/Videos";
-
-import GlobalFooter from "@/components/GlobalFooter";
+import GlobalFooter from "@/components/GlobalFooter"
+import Hero from "./_sections/Hero"
+import LatestNews from "./_sections/LatestNews"
+import Discography from "./_sections/Discography"
+import Videos from "./_sections/Videos"
 
 export default function Home() {
   return (
     <div
       id="scroll"
-      className="h-screen overflow-y-scroll snap-y snap-mandatory"
+      className="h-screen snap-y snap-mandatory overflow-y-scroll"
     >
       <Hero />
       <LatestNews />
@@ -18,5 +17,5 @@ export default function Home() {
 
       <GlobalFooter />
     </div>
-  );
+  )
 }

@@ -1,16 +1,16 @@
-import type { Metadata, Viewport } from "next";
-import { GoogleTagManager } from "@next/third-parties/google";
+import type { Metadata, Viewport } from "next"
+import { GoogleTagManager } from "@next/third-parties/google"
 
-import "@/styles/globals.css";
+import "@/styles/globals.css"
 
-import GlobalHeader from "@/components/GlobalHeader";
+import GlobalHeader from "@/components/GlobalHeader"
 
-import { cn } from "@/utils/tailwind-merge";
-import { plusJakartaSans } from "@/styles/fonts";
+import { cn } from "@/utils/tailwind-merge"
+import { plusJakartaSans } from "@/styles/fonts"
 
-import "swiper/css";
-import "swiper/css/effect-coverflow";
-import "swiper/css/navigation";
+import "swiper/css"
+import "swiper/css/effect-coverflow"
+import "swiper/css/navigation"
 
 export const metadata: Metadata = {
   // SEO Meta tags
@@ -58,8 +58,10 @@ export const metadata: Metadata = {
   // Favicons
   icons: {
     icon: "https://static.hebi.im/assets/images/2025/03/favicon.webp",
-    shortcut: "https://static.hebi.im/assets/images/2025/03/favicon.webp",
-    apple: "https://static.hebi.im/assets/images/2025/03/favicon.webp",
+    shortcut:
+      "https://static.hebi.im/assets/images/2025/03/favicon.webp",
+    apple:
+      "https://static.hebi.im/assets/images/2025/03/favicon.webp",
   },
 
   // Twitter card tags
@@ -85,22 +87,23 @@ export const metadata: Metadata = {
 
   verification: {
     other: {
-      "naver-site-verification": "32a23dead0b548f7c6defdd054041ae55e1fd8a7",
+      "naver-site-verification":
+        "32a23dead0b548f7c6defdd054041ae55e1fd8a7",
     },
   },
-};
+}
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1.0,
 
   themeColor: "#373584",
-};
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="en">
@@ -124,5 +127,5 @@ export default function RootLayout({
         {children}
       </body>
     </html>
-  );
+  )
 }

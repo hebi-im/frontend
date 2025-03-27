@@ -1,6 +1,6 @@
 // import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
-import { mockNews } from "@/app/_mock-datas/mockDatas";
+import { mockNews } from "@/app/_mock-datas/mockDatas"
 
 // import { ebGaramond } from "@/styles/fonts";
 // import { cn } from "@/utils/tailwind-merge";
@@ -8,23 +8,25 @@ import { mockNews } from "@/app/_mock-datas/mockDatas";
 export default function LatestNews() {
   return (
     <section
-      className="h-screen flex items-center justify-center snap-start"
+      className="flex h-screen snap-start items-center justify-center"
       data-section="news"
       data-section-name="Latest News"
     >
       <div className="flex flex-col items-end gap-8">
-        <div className="w-[1200px] flex flex-col gap-8">
+        <div className="flex w-[1200px] flex-col gap-8">
           {mockNews.map((news, index) => (
             <a
               href={news.link}
               key={`news-${index.toString()}`}
-              className="flex flex-col gap-3 cursor-pointer hover:opacity-70 border-b border-white/50 pb-8"
+              className="flex cursor-pointer flex-col gap-3 border-b border-white/50 pb-8 hover:opacity-70"
               target="_blank"
             >
-              <span className="text-white/50 text-base font-normal">
+              <span className="text-base font-normal text-white/50">
                 {news.date}
               </span>
-              <h3 className="text-white text-2xl font-normal">{news.title}</h3>
+              <h3 className="text-2xl font-normal text-white">
+                {news.title}
+              </h3>
             </a>
           ))}
         </div>
@@ -38,5 +40,5 @@ export default function LatestNews() {
         </button> */}
       </div>
     </section>
-  );
+  )
 }

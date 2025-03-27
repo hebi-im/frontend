@@ -1,75 +1,83 @@
-"use client";
+"use client"
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react"
 
-import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link"
+import { usePathname, useRouter } from "next/navigation"
 
-import throttle from "@/utils/throttle";
+import { throttle } from "@/utils/throttle"
 
-import HebiLogo from "@/assets/logo.svg";
-import MenuIcon from "@/assets/icons/menu.svg";
+import HebiLogo from "@/assets/logo.svg"
+import MenuIcon from "@/assets/icons/menu.svg"
 
-import { ebGaramond } from "@/styles/fonts";
-import { cn } from "@/utils/tailwind-merge";
+import { ebGaramond } from "@/styles/fonts"
+import { cn } from "@/utils/tailwind-merge"
 
 export default function GlobalHeader() {
-  const [currentPath, setCurrentPath] = useState("");
+  const [currentPath, setCurrentPath] = useState("")
 
-  const router = useRouter();
-  const pathname = usePathname();
+  const router = useRouter()
+  const pathname = usePathname()
 
-  const $scrollArea = useRef<HTMLDivElement>(null);
+  const $scrollArea = useRef<HTMLDivElement>(null)
 
   const updateHash = throttle(() => {
     if (!pathname.substring(1)) {
       // section 일러먼트 중 data-section값이 있는 값만 가져오기
       const sections = document.querySelectorAll<HTMLDivElement>(
-        "section[data-section]"
-      );
+        "section[data-section]",
+      )
 
+      // eslint-disable-next-line no-restricted-syntax
       for (const section of sections) {
-        if (section.getBoundingClientRect().top == 0) {
+        if (section.getBoundingClientRect().top === 0) {
           setCurrentPath(
-            section.dataset.section === "hero" || !section.dataset.sectionName
+            section.dataset.section === "hero" ||
+              !section.dataset.sectionName
               ? ""
-              : section.dataset.sectionName
-          );
+              : section.dataset.sectionName,
+          )
 
           router.replace(`#${section.dataset.section ?? "hero"}`, {
             scroll: false,
-          });
-          break;
+          })
+          break
         }
       }
     }
-  }, 200); // 200ms 간격으로 제한
+  }, 200) // 200ms 간격으로 제한
 
   useEffect(() => {
-    $scrollArea.current = document.querySelector("div#scroll");
+    $scrollArea.current = document.querySelector("div#scroll")
 
     if (pathname.substring(1)) {
-      setCurrentPath(pathname.substring(1));
+      setCurrentPath(pathname.substring(1))
     }
 
-    updateHash();
+    updateHash()
 
-    $scrollArea.current!.addEventListener("scrollend", updateHash);
+    $scrollArea.current!.addEventListener("scrollend", updateHash)
     return () => {
-      $scrollArea.current!.removeEventListener("scrollend", updateHash);
-    };
-  }, [pathname, router, updateHash]);
+      $scrollArea.current!.removeEventListener(
+        "scrollend",
+        updateHash,
+      )
+    }
+  }, [pathname, router, updateHash])
 
   return (
-    <header className="text-white flex justify-between items-center px-16 pt-12 fixed top-0 left-0 w-full z-100">
+    <header className="fixed top-0 left-0 z-100 flex w-full items-center justify-between px-16 pt-12 text-white">
       <div className="flex items-center gap-8">
         <Link
           href="/"
-          onClick={(e) => {
+          onClick={e => {
             if (pathname === "/") {
-              e.preventDefault();
+              e.preventDefault()
 
-              $scrollArea.current!.scrollTo({ top: 0, behavior: "smooth" });
+              $scrollArea.current!.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              })
             }
           }}
         >
@@ -80,8 +88,8 @@ export default function GlobalHeader() {
           <div className="flex items-center gap-8 border-l-2 border-white pl-8">
             <span
               className={cn(
-                "text-4xl font-bold leading-10",
-                ebGaramond.className
+                "text-4xl leading-10 font-bold",
+                ebGaramond.className,
               )}
             >
               {currentPath}
@@ -91,10 +99,10 @@ export default function GlobalHeader() {
       </div>
 
       <div className="flex items-center">
-        <button className="cursor-pointer" title="Menu">
+        <button type="button" className="cursor-pointer" title="Menu">
           <MenuIcon height={24} />
         </button>
       </div>
     </header>
-  );
+  )
 }
