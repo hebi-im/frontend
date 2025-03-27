@@ -1,11 +1,11 @@
 const mockHeroImages = [
   {
     id: 0,
-    src: "https://static.hebi.im/assets/images/2025/03/banner/20250314_weverse-open.webp",
+    src: "https://static.hebi.im/assets/images/2025/03/banner/20250309_roadmap.webp",
   },
   {
     id: 1,
-    src: "https://static.hebi.im/assets/images/2025/03/banner/20250309_roadmap.webp",
+    src: "https://static.hebi.im/assets/images/2025/03/banner/20250314_weverse-open.webp",
   },
   {
     id: 2,
