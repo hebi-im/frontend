@@ -26,8 +26,8 @@ export default function Videos() {
   return (
     <section
       className="flex h-screen snap-start items-center justify-center"
-      data-section="videos"
-      data-section-name="Videos"
+      id="videos"
+      data-section="Videos"
     >
       <div className="flex w-full max-w-[1200px] flex-col items-end gap-8">
         <div className="flex w-full max-w-[1200px] items-center justify-between gap-10">

@@ -9,8 +9,8 @@ export default function LatestNews() {
   return (
     <section
       className="flex h-screen snap-start items-center justify-center"
-      data-section="news"
-      data-section-name="Latest News"
+      id="news"
+      data-section="Latest News"
     >
       <div className="flex flex-col items-end gap-8">
         <div className="flex w-[1200px] flex-col gap-8">

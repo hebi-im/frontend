@@ -32,13 +32,12 @@ export default function GlobalHeader() {
       for (const section of sections) {
         if (section.getBoundingClientRect().top === 0) {
           setCurrentPath(
-            section.dataset.section === "hero" ||
-              !section.dataset.sectionName
+            section.id === "hero" || !section.dataset.section
               ? ""
-              : section.dataset.sectionName,
+              : section.dataset.section,
           )
 
-          router.replace(`#${section.dataset.section ?? "hero"}`, {
+          router.replace(`#${section.id ?? "hero"}`, {
             scroll: false,
           })
           break

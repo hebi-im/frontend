@@ -52,8 +52,8 @@ export default function Hero() {
   return (
     <section
       className="relative flex h-screen snap-start items-center justify-center overflow-hidden"
-      data-section="hero"
-      data-section-name=""
+      id="hero"
+      data-section=""
     >
       <div className="absolute inset-0">
         <div

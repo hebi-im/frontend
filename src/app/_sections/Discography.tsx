@@ -17,8 +17,8 @@ export default function Discography() {
   return (
     <section
       className="flex h-screen snap-start items-center justify-center"
-      data-section="discography"
-      data-section-name="Discography"
+      id="discography"
+      data-section="Discography"
     >
       <div className="flex w-full max-w-[1200px] flex-col gap-8">
         <div className="flex w-full max-w-[1200px] items-center justify-between gap-10">
