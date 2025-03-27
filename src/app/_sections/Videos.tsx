@@ -13,8 +13,8 @@ import { mockVideos } from "@/app/_mock-datas/mockDatas";
 import PrevArrowCircleIcon from "@/assets/icons/prev_arrow_circle.svg";
 import NextArrowCircleIcon from "@/assets/icons/next_arrow_circle.svg";
 
-// import { ebGaramond } from "@/styles/fonts";
-// import { cn } from "@/utils/tailwind-merge";
+import { ebGaramond } from "@/styles/fonts";
+import { cn } from "@/utils/tailwind-merge";
 
 const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
 
@@ -76,10 +76,15 @@ export default function Videos() {
 
                   {!isPlaying && (
                     <div className="absolute bottom-8 left-8 z-10 flex flex-col gap-2">
-                      <span className="text-white text-base font-['EB_Garamond']">
+                      <span className={cn("text-white", ebGaramond.className)}>
                         {video.uploadDate}
                       </span>
-                      <h2 className="text-white text-2xl font-bold font-['EB_Garamond']">
+                      <h2
+                        className={cn(
+                          "text-white text-2xl font-bold",
+                          ebGaramond.className
+                        )}
+                      >
                         {video.title}
                       </h2>
                     </div>

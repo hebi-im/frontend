@@ -10,6 +10,9 @@ import throttle from "@/utils/throttle";
 import HebiLogo from "@/assets/logo.svg";
 import MenuIcon from "@/assets/icons/menu.svg";
 
+import { ebGaramond } from "@/styles/fonts";
+import { cn } from "@/utils/tailwind-merge";
+
 export default function GlobalHeader() {
   const [currentPath, setCurrentPath] = useState("");
 
@@ -75,7 +78,12 @@ export default function GlobalHeader() {
 
         {currentPath && (
           <div className="flex items-center gap-8 border-l-2 border-white pl-8">
-            <span className="justify-start text-[40px] font-bold font-['EB_Garamond'] leading-10">
+            <span
+              className={cn(
+                "text-4xl font-bold leading-10",
+                ebGaramond.className
+              )}
+            >
               {currentPath}
             </span>
           </div>
