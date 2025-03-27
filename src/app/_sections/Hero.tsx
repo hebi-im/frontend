@@ -4,13 +4,15 @@ import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import dynamic from "next/dynamic"
 
+import { SiX, SiYoutube } from "@icons-pack/react-simple-icons"
+import WeverseLogo from "@/assets/symbols/weverse.svg"
+
 import { cn } from "@/utils/tailwind-merge"
 
 import {
   mockHeroImages,
   mockMessages,
 } from "@/app/_mock-datas/mockDatas"
-import { SiYoutube } from "@icons-pack/react-simple-icons"
 
 import { dmSerifDisplay } from "@/styles/fonts"
 
@@ -160,7 +162,17 @@ export default function Hero() {
               </h1>
 
               <div className="flex items-center gap-3">
-                <SiYoutube size={20} />
+                {(message.link.includes("youtu.be") ||
+                  message.link.includes("youtube.com")) && (
+                  <SiYoutube size={20} />
+                )}
+                {(message.link.includes("x.com") ||
+                  message.link.includes("twitter.com")) && (
+                  <SiX size={20} />
+                )}
+                {message.link.includes("weverse.io") && (
+                  <WeverseLogo width={24} />
+                )}
 
                 <p className="font-semibold text-white">
                   {message.description}
