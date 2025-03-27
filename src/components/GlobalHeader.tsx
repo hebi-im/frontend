@@ -12,7 +12,7 @@ export default function GlobalHeader() {
   }, [pathname]);
 
   return (
-    <header className="text-white flex justify-between items-center p-[64px] fixed top-0 left-0 w-full">
+    <header className="text-white flex justify-between items-center p-[64px] fixed top-0 left-0 w-full z-100">
       <div className=" flex items-center gap-[32px] h-[44px]">
         <Image
           src={"/assets/logo.svg"}
