@@ -37,9 +37,11 @@ export default function GlobalHeader() {
               : section.dataset.section,
           )
 
-          router.replace(`#${section.id ?? "hero"}`, {
-            scroll: false,
-          })
+          window.history.replaceState(
+            {},
+            "",
+            `#${section.id ?? "hero"}`,
+          )
           break
         }
       }

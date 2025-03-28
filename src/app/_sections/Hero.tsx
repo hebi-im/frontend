@@ -29,7 +29,11 @@ export default function Hero() {
   const bannerSlideshowInterval =
     useRef<ReturnType<typeof setInterval>>(null)
 
-  const videoId = "hokrG5p7cEY"
+  const video = {
+    id: "_0f5FjEQzsg",
+    start: 124,
+    end: 205,
+  }
 
   function playImageSlideshow() {
     bannerSlideshowInterval.current = setInterval(() => {
@@ -47,7 +51,7 @@ export default function Hero() {
 
       window.removeEventListener("click", () => setIsMuted(false))
     }
-  }, [videoId])
+  }, [])
 
   return (
     <section
@@ -63,7 +67,7 @@ export default function Hero() {
           )}
         >
           <Image
-            src={`https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`}
+            src={`https://i.ytimg.com/vi/${video.id}/maxresdefault.jpg`}
             alt="Video Thumbnail"
             className="h-full w-full scale-110 object-cover blur-xl"
             fill
@@ -88,7 +92,7 @@ export default function Hero() {
           ))
         ) : (
           <ReactPlayer
-            url={`https://youtu.be/${videoId}`}
+            url={`https://youtu.be/${video.id}`}
             className="absolute inset-0 size-full transition-opacity duration-500"
             width="100%"
             height="100%"
@@ -104,6 +108,9 @@ export default function Hero() {
                   rel: 0,
                   cc_load_policy: 0,
                   iv_load_policy: 3,
+
+                  start: video.start,
+                  end: video.end,
                 },
               },
             }}

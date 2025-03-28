@@ -48,7 +48,7 @@ export default function Discography() {
               <SwiperSlide key={`discography-${index.toString()}`}>
                 {({ isActive }) => (
                   <a
-                    href={`https://youtu.be/${song.id}`}
+                    href={song.url}
                     className={`flex h-fit w-fit flex-col items-center justify-center gap-11 ${
                       isActive ? "cursor-pointer" : "cursor-default"
                     }`}
@@ -59,7 +59,7 @@ export default function Discography() {
                       <div
                         className="absolute h-full w-full rounded bg-cover bg-center bg-no-repeat"
                         style={{
-                          backgroundImage: `url(https://i.ytimg.com/vi/${song.id}/hq720.jpg)`,
+                          backgroundImage: `url(${song.image})`,
                         }}
                       />
 

@@ -8,8 +8,9 @@ const nextConfig: NextConfig = {
     ],
   },
 
+  allowedDevOrigins: ["macbook"],
+
   experimental: {
-    allowedDevOrigins: ["macbook"],
     turbo: {
       rules: {
         "*.svg": {
