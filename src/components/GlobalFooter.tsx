@@ -1,10 +1,15 @@
-import HebiLogo from "@/assets/logo.svg"
+import Image from "next/image"
 
 export default function GlobalFooter() {
   return (
     <footer className="snap-end bg-[#0F111F] text-white">
       <div className="container mx-auto flex flex-col items-start justify-start gap-[42px] py-[64px]">
-        <HebiLogo height={44} />
+        <Image
+          src="https://static.hebi.im/assets/images/2025/03/symbol.webp"
+          alt="Hebi."
+          width={114}
+          height={44}
+        />
 
         <div className="flex w-full flex-col items-start justify-start gap-[18px]">
           <div className="flex w-full flex-col items-start justify-start gap-[8px]">
@@ -23,7 +28,7 @@ export default function GlobalFooter() {
             | Contact: <a href="mailto:team@hebi.im">team@hebi.im</a>{" "}
             (Alternatively{" "}
             <a href="mailto:hebi.im@lunaiz.com">hebi.im@lunaiz.com</a>
-            )
+            ){" "}
           </p>
         </div>
       </div>

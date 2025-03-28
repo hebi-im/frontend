@@ -3,11 +3,11 @@
 import React, { useEffect, useRef, useState } from "react"
 
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname, useRouter } from "next/navigation"
 
 import { throttle } from "@/utils/throttle"
 
-import HebiLogo from "@/assets/logo.svg"
 import MenuIcon from "@/assets/icons/menu.svg"
 
 import { ebGaramond } from "@/styles/fonts"
@@ -82,7 +82,12 @@ export default function GlobalHeader() {
             }
           }}
         >
-          <HebiLogo height={44} />
+          <Image
+            src="https://static.hebi.im/assets/images/2025/03/symbol.webp"
+            alt="Hebi."
+            width={114}
+            height={44}
+          />
         </Link>
 
         {currentPath && (
