@@ -1,16 +1,52 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
+/* eslint-disable no-underscore-dangle */
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+import { dirname } from "node:path"
+import { fileURLToPath } from "node:url"
 
+import js from "@eslint/js"
+import { FlatCompat } from "@eslint/eslintrc"
+
+import prettier from "eslint-plugin-prettier"
+import tseslint from "typescript-eslint"
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 const compat = new FlatCompat({
   baseDirectory: __dirname,
-});
+  recommendedConfig: {
+    ...js.configs.recommended,
+    ...tseslint.configs.recommended,
+  },
+  allConfig: js.configs.all,
+})
 
 const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
-];
+  ...compat.extends(
+    "airbnb",
+    "airbnb/hooks",
+    "next/core-web-vitals",
+    "next/typescript",
+    "plugin:prettier/recommended",
+    "prettier",
+  ),
+  {
+    plugins: {
+      prettier,
+    },
 
-export default eslintConfig;
+    rules: {
+      "no-nested-ternary": "off",
+      "react/require-default-props": "off",
+      "react/jsx-props-no-spreading": "off",
+      "react/no-unstable-nested-components": "off",
+      "react/jsx-filename-extension": [
+        "error",
+        { extensions: [".js", ".ts", ".jsx", ".tsx"] },
+      ],
+      "import/extensions": "off",
+      "import/no-extraneous-dependencies": "off",
+    },
+  },
+]
+
+export default eslintConfig

@@ -1,9 +1,21 @@
-// import Image from "next/image";
+import GlobalFooter from "@/components/GlobalFooter"
+import Hero from "./_sections/Hero"
+import LatestNews from "./_sections/LatestNews"
+import Discography from "./_sections/Discography"
+import Videos from "./_sections/Videos"
 
 export default function Home() {
   return (
-    <div className="items-center justify-items-center min-h-screen p-8 pt-[200px] pb-20">
-      Main
+    <div
+      id="scroll"
+      className="h-screen snap-y snap-mandatory overflow-y-scroll"
+    >
+      <Hero />
+      <LatestNews />
+      <Discography />
+      <Videos />
+
+      <GlobalFooter />
     </div>
-  );
+  )
 }

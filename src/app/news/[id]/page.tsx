@@ -2,10 +2,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 const articleDetails = {
-  id: 1,
-  tag: "이벤트",
-  title: "Hebi 위버스 커뮤니티 오픈 기념 이벤트",
-  date: "2024-03-20",
+  title: "[이벤트] Hebi 위버스 커뮤니티 오픈 기념 이벤트",
+  date: "2025. 03. 14",
   article: `뱀뱀이들을 위한 글로벌 공식 팬 커뮤니티
 Hebi 커뮤니티에 오신 것을 환영합니다!
 
@@ -54,15 +52,15 @@ export default function NewsDetailPage({ params }: { params: { id: string } }) {
   if (!article) return notFound(); 
 
   return (
-    <main className="max-w-7xl pt-52 pb-16 mx-auto">
+    <main className="max-w-7xl pt-32 pb-16 mx-auto">
       <Link href="/news" className="flex items-center space-x-2 text-white/70 hover:text-white transition">
-        <span className="text-xl">{"<-"}</span> 
+        <span className="text-xl">{"←"}</span> 
       </Link>
       <section className="space-y-10 mt-8">
 
         <div className="border-b pb-5">
           <p className="text-[16px] font-bold text-white/50 pb-2">{article.date}</p>
-          <h1 className="text-2xl">{`[${article.tag}] ${article.title}`}</h1>
+          <h1 className="text-2xl">{`${article.title}`}</h1>
         </div>
 
         <article className="prose prose-lg text-white/80 leading-relaxed whitespace-pre-line">
