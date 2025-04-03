@@ -1,4 +1,4 @@
-import { createInstance, i18n } from "i18next"
+import { createInstance } from "i18next"
 import resourcesToBackend from "i18next-resources-to-backend"
 import { initReactI18next } from "react-i18next/initReactI18next"
 import { getOptions, LocaleTypes } from "./settings"
@@ -10,13 +10,13 @@ const initI18next = async (lng: LocaleTypes, ns: string) => {
     .use(
       resourcesToBackend(
         (language: string, namespace: typeof ns) =>
-          import(`../../locales/${language}/${namespace}.json`),
+          import(`./locales/${language}/${namespace}.json`),
       ),
     )
     .init(getOptions(lng, ns))
   return i18nInstance
 }
-export async function createTranslation(
+export default async function serverTranslation(
   lng: LocaleTypes,
   ns: string,
 ) {
