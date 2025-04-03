@@ -5,7 +5,7 @@ import { EffectCoverflow, Navigation } from "swiper/modules"
 
 // import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
-import { mockSongs } from "@/app/_mock-datas/mockDatas"
+import { mockSongs } from "@/app/[lng]/_mock-datas/mockDatas"
 
 import PrevArrowCircleIcon from "@/assets/icons/prev_arrow_circle.svg"
 import NextArrowCircleIcon from "@/assets/icons/next_arrow_circle.svg"
