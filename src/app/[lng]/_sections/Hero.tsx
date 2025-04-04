@@ -12,15 +12,19 @@ import { cn } from "@/utils/tailwind-merge"
 import {
   mockHeroImages,
   mockMessages,
-} from "@/app/_mock-datas/mockDatas"
+} from "@/app/[lng]/_mock-datas/mockDatas"
 
 import { dmSerifDisplay } from "@/styles/fonts"
+import useTranslation from "@/utils/i18n/client"
+import { LocaleTypes } from "@/utils/i18n/settings"
 
 const ReactPlayer = dynamic(() => import("react-player/lazy"), {
   ssr: false,
 })
 
-export default function Hero() {
+export default function Hero({ lng }: { lng: LocaleTypes }) {
+  const { t } = useTranslation(lng, "section1")
+
   const [isPlaying, setIsPlaying] = useState(false)
   const [isEnded, setIsEnded] = useState(false)
   const [isMuted, setIsMuted] = useState(true)
@@ -141,9 +145,7 @@ export default function Hero() {
             © 2025 Project Hebi.im. ALL RIGHTS RESERVED.
           </span>
 
-          <span className="font-light">
-            Hebi.im은 Hebi가 운영하는 공식 사이트가 아닙니다.
-          </span>
+          <span className="font-light">{t("bottom.disclaimer")}</span>
         </div>
 
         {mockMessages.map((message, index) => (

@@ -6,16 +6,24 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build:i18n": "node src/utils/i18n/locales/build.js"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "@icons-pack/react-simple-icons": "^12.3.0",
     "@next/third-parties": "^15.2.4",
+    "@types/lodash": "^4.17.16",
     "clsx": "^2.1.1",
+    "i18next": "^24.2.3",
+    "i18next-browser-languagedetector": "^8.0.4",
+    "i18next-resources-to-backend": "^1.2.1",
+    "lodash": "^4.17.21",
     "next": "15.2.4",
+    "public-google-sheets-parser": "^1.5.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-i18next": "^15.4.1",
     "react-player": "^2.16.0",
     "swiper": "^11.2.6",
     "tailwind-merge": "^3.0.2"

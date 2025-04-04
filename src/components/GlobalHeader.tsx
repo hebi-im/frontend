@@ -22,8 +22,10 @@ export default function GlobalHeader() {
   const $scrollArea = useRef<HTMLDivElement>(null)
 
   const updateHash = throttle(() => {
-    if (!pathname.substring(1)) {
-      // section 일러먼트 중 data-section값이 있는 값만 가져오기
+    const pathWithoutI18n = pathname.split("/").slice(2).join("/")
+
+    // section 일러먼트 중 data-section값이 있는 값만 가져오기
+    if (!pathWithoutI18n) {
       const sections = document.querySelectorAll<HTMLDivElement>(
         "section[data-section]",
       )
@@ -37,10 +39,13 @@ export default function GlobalHeader() {
               : section.dataset.section,
           )
 
+          const basePathname = pathname.endsWith("/")
+            ? pathname
+            : `${pathname}/`
           window.history.replaceState(
             {},
             "",
-            `#${section.id ?? "hero"}`,
+            `${basePathname}#${section.id ?? "hero"}`,
           )
           break
         }

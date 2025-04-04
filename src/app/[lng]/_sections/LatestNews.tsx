@@ -1,6 +1,6 @@
 // import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
-import { mockNews } from "@/app/_mock-datas/mockDatas"
+import { mockNews } from "@/app/[lng]/_mock-datas/mockDatas"
 
 // import { ebGaramond } from "@/styles/fonts";
 // import { cn } from "@/utils/tailwind-merge";

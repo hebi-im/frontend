@@ -1,6 +1,13 @@
+import serverTranslation from "@/utils/i18n"
+import { LocaleTypes } from "@/utils/i18n/settings"
 import Image from "next/image"
 
-export default function GlobalFooter() {
+export default async function GlobalFooter({
+  lng,
+}: {
+  lng: LocaleTypes
+}) {
+  const { t } = await serverTranslation(lng, "footer")
   return (
     <footer className="snap-end bg-[#0F111F] text-white">
       <div className="container mx-auto flex flex-col items-start justify-start gap-[42px] py-[64px]">
@@ -16,9 +23,7 @@ export default function GlobalFooter() {
             <p className="text-base font-bold">
               © 2025 Project Hebi.im. ALL RIGHTS RESERVED.
             </p>
-            <p className="text-sm">
-              Hebi.im은 Hebi가 운영하는 공식 사이트가 아닙니다.
-            </p>
+            <p className="text-sm">{t("disclaimer")}</p>
           </div>
 
           <p className="text-sm">

@@ -12,6 +12,9 @@ import "swiper/css"
 import "swiper/css/effect-coverflow"
 import "swiper/css/navigation"
 
+import { dir } from "i18next"
+import { languages, LocaleTypes } from "../../utils/i18n/settings"
+
 export const metadata: Metadata = {
   // SEO Meta tags
   title: "Hebi. | Unofficial Site",
@@ -100,13 +103,20 @@ export const viewport: Viewport = {
   themeColor: "#373584",
 }
 
-export default function RootLayout({
+export async function generateStaticParams() {
+  return languages.map(lng => ({ lng }))
+}
+
+export default async function RootLayout({
   children,
-}: Readonly<{
+  params,
+}: {
   children: React.ReactNode
-}>) {
+  params: Promise<{ lng: LocaleTypes }>
+}) {
+  const { lng } = await params
   return (
-    <html lang="en">
+    <html lang={lng} dir={dir(lng)}>
       <head>
         {/* Fonts */}
         <link
