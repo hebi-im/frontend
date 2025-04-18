@@ -30,9 +30,9 @@ export default function Hero() {
     useRef<ReturnType<typeof setInterval>>(null)
 
   const video = {
-    id: "_0f5FjEQzsg",
-    start: 124,
-    end: 205,
+    id: "VgHuxC8Bp6U",
+    start: 0,
+    end: 17,
   }
 
   function playImageSlideshow() {
@@ -151,7 +151,9 @@ export default function Hero() {
             key={`message-${index.toString()}`}
             className={cn(
               "absolute right-16 bottom-10 transition-all duration-1000",
-              currentIndex === index ? "opacity-100" : "opacity-0",
+              currentIndex === index
+                ? "opacity-100"
+                : "hidden opacity-0",
             )}
           >
             <a
